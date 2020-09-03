@@ -1,5 +1,5 @@
 import tmi from 'tmi.js';
-import { permissionCheck } from './helpers.js';
+import { permissionCheck } from './helpers';
 
 const options = {
   options: { debug: true },
@@ -27,5 +27,8 @@ client.on('message', async (channel, user, message, self) => {
     (await permissionCheck({ user, client, level: 'vip' }))
   ) {
     client.say(channel, `Go checkout ${targetUser} at twitch.tv/${targetUser}`);
+  }
+  if (command === '!cs' || command === '!currentsong') {
+    console.log('MUSIC');
   }
 });

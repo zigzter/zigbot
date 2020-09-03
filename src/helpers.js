@@ -1,5 +1,5 @@
 /* eslint-disable no-fallthrough */
-/* eslint-disable import/prefer-default-export */
+import got from 'got';
 
 export const permissionCheck = async ({ user, client, level }) => {
   let allow = false;
@@ -21,4 +21,8 @@ export const permissionCheck = async ({ user, client, level }) => {
     default:
   }
   return allow;
+};
+
+export const getCurrentlyPlaying = () => {
+  // do stuff
 };
